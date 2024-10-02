@@ -13,6 +13,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>17</maven.compiler.source> <!-- Ensure Java 17 is used -->
+        <maven.compiler.target>17</maven.compiler.target> <!-- Ensure Java 17 is used -->
 	</properties>
 
 	<dependencies>
