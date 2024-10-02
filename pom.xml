@@ -119,25 +119,25 @@
 			defaults (may be moved to parent pom) -->
 			<plugins>
 
-				<plugin>
+				<!--<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.10.1</version> <!-- Ensure you are using an
-					up-to-date version -->
+					<version>3.10.1</version>  Ensure you are using an
+					up-to-date version 
 					<configuration>
-						<source>17</source>  <!-- Java source version -->
-						<target>17</target>  <!-- Java target version -->
+						<source>17</source>   Java source version 
+						<target>17</target>   Java target version 
 					</configuration>
-				</plugin>
+				</plugin>-->
 
-				<plugin>
+	<!--			<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.10.1</version>
 					<configuration>
-						<!-- put your configurations here -->
+						 put your configurations here 
 					</configuration>
-				</plugin>
+				</plugin>-->
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
