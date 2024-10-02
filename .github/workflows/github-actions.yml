@@ -1,0 +1,47 @@
+name: Java Selenium Automation CI
+run-name: ${{ github.actor }} is testing Java Selenium Automation 🚀
+
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  selenium-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository code
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Java 17
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '17'
+
+      # Step 3: Set up Maven cache to speed up dependencies
+      - name: Cache Maven packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      # Step 4: Run Maven tests (this will execute your Selenium tests)
+      - name: Run Maven tests
+        run: mvn clean test
+
+      # Optional: List files in the repository (for debugging)
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+
+      # Step 5: Print the job status
+      - run: echo "🍏 This job's status is ${{ job.status }}."
